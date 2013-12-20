@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Automaton</h1>
+</div>
+<p class="lead">
+    <form id="automaton" action="/dot-graph/" method="post">{% csrf_token %}
+        <div class="input-group">
+            <input type="text" id="regex" name="regex" class="form-control" placeholder="piweek" autofocus>
+            <span class="input-group-btn">
+                <button class="btn btn-default" id="submit" type="submit">Go!</button>
+            </span>
+        </div>
+    </form>
+</p>
+
+<section id="automaton-area">
+    <img id="automaton-image" data-url="{% static 'graphs/output.png' %}" src="{% static 'graphs/output.png' %}">
+</section>
+{% endblock %}
+
+{% block css %}
+<link href="{% static 'css/app.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/app.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,4 @@
+django
+pygraphviz
+parsley
+-e git+https://github.com/ikame/automaton#egg=automaton
